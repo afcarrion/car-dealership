@@ -14,7 +14,7 @@ export class CarsController {
     }
 
     @Get(':id')
-    getCarById(@Param('id', ParseIntPipe) id){
+    getCarById(@Param('id') id){
         console.log(id)
         return this.carsService.findById(id)
     }
@@ -26,13 +26,13 @@ export class CarsController {
 
     @Patch(':id')
     updateCar( 
-        @Param('id', ParseIntPipe) id: number,
+        @Param('id') id: number,
         @Body() car: any){
         return car;
     }
 
     @Delete(':id')
-    deleteCar( @Param('id', ParseIntPipe) id){
+    deleteCar( @Param('id') id){
         return `Deleted id ${id}`
     }
 
